@@ -69,3 +69,5 @@ Every authorized delivery is stored in `app_private.selar_events` with its outco
 * Parsing verified on generated PDF (per page), DOCX, XLSX, PPTX, TXT, CSV. OCR and legacy formats return actionable errors without keys.
 * Browser tests (Playwright): all public pages, navigation, mobile menu, footer text, Selar links and order, no dashes or emoji in visible text, protected route redirects, form validation, 15 dashboard pages and workspace tabs against a mock Supabase API, mobile overflow checks.
 * **Not tested:** real Supabase Auth round trips (email delivery, verification and reset links), real storage uploads, and any call to Anthropic or LlamaParse. These need your credentials. Follow Setup, then sign up and upload a file to confirm end to end.
+
+<!-- deploy trigger -->
