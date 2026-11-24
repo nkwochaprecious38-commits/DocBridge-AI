@@ -1,13 +1,11 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { supabaseConfigured } from "@/lib/supabase/env";
 import { Alert, EMAIL_RE, Field, PasswordInput, passwordProblem } from "@/components/AuthParts";
 
 export default function SignUp() {
-  const router = useRouter();
   const [f, setF] = useState({ name: "", org: "", email: "", password: "", confirm: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [formError, setFormError] = useState("");
@@ -37,7 +35,7 @@ export default function SignUp() {
     if (error) return setFormError(error.message);
     // Supabase returns a user with no identities when the email is already registered.
     if (data.user && data.user.identities?.length === 0) return setFormError("An account with this email already exists. Try logging in instead.");
-    if (data.session) { router.push("/dashboard"); router.refresh(); return; }
+    if (data.session) { window.location.assign("/dashboard"); return; }
     setSent(true);
   }
 
