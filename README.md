@@ -60,8 +60,8 @@ Every authorized delivery is stored in `app_private.selar_events` with its outco
 | Google Drive, SharePoint, OneDrive, Dropbox, S3, GCS | Not built. Settings shows them as not configured |
 | External vector database | Not connected. The `document_embeddings` table (pgvector) is provisioned for it |
 
-## Replacing the logo
-`components/Logo.tsx` and `public/logo.svg`, `public/favicon.svg` hold a neutral placeholder mark. Swap those three files when your final logo is ready.
+## Logo
+The official DocBridge AI mark lives in `public/logo-mark.png` (transparent), with the full lockup in `public/logo-full.png`, favicons (`favicon.ico`, `favicon-32.png`), `apple-touch-icon.png` and app icons (`icon-192.png`, `icon-512.png`). `components/Logo.tsx` renders the mark with live text so it works on light and dark backgrounds.
 
 ## Testing performed
 * Production build and type check pass.
@@ -70,4 +70,3 @@ Every authorized delivery is stored in `app_private.selar_events` with its outco
 * Browser tests (Playwright): all public pages, navigation, mobile menu, footer text, Selar links and order, no dashes or emoji in visible text, protected route redirects, form validation, 15 dashboard pages and workspace tabs against a mock Supabase API, mobile overflow checks.
 * **Not tested:** real Supabase Auth round trips (email delivery, verification and reset links), real storage uploads, and any call to Anthropic or LlamaParse. These need your credentials. Follow Setup, then sign up and upload a file to confirm end to end.
 
-<!-- deploy trigger -->

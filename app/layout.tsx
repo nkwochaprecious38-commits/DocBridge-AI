@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: { default: "DocBridge: Document Intelligence Platform", template: "%s | DocBridge" },
   description: "DocBridge transforms complex documents into structured, searchable, and actionable information.",
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: [{ url: "/favicon.ico" }, { url: "/favicon-32.png", sizes: "32x32", type: "image/png" }, { url: "/icon-192.png", sizes: "192x192", type: "image/png" }], apple: "/apple-touch-icon.png" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
